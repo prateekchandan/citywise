@@ -13,6 +13,8 @@
 
 Route::get('/', function()
 {
-	print_r(Auth::user());
+
+	   echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+	
 	return View::make('home');
 });
