@@ -13,5 +13,6 @@
 
 Route::get('/', function()
 {
+	print_r(Auth::user());
 	return View::make('home');
 });
