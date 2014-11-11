@@ -25,7 +25,7 @@ class Users extends Migration {
 
 		Schema::create('users', function(Blueprint $table)
 		{
-			$table->increments('user_id');
+			$table->increments('id');
 			$table->string('email')->unique();
 			$table->string('password', 60)->nullable();
 			$table->string('name', 200);
@@ -45,8 +45,8 @@ class Users extends Migration {
 		{
 			$table->increments('shop_id');
 			$table->string('name',200);
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+			$table->integer('id')->unsigned();
+			$table->foreign('id')->references('id')->on('users')->onDelete('cascade');
 			$table->string('img',500)->nullable();
 			$table->text('address')->nullable();
 			$table->string('city', 100)->nullable();
@@ -91,6 +91,8 @@ class Users extends Migration {
 
 		Schema::create('product_filter', function(Blueprint $table)
 		{
+			$table->integer('product_id')->unsigned();
+			$table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
 			$table->integer('filter_id')->unsigned();
 			$table->foreign('filter_id')->references('filter_id')->on('filter_list')->onDelete('cascade');
 			$table->string('value',200);
@@ -109,6 +111,8 @@ class Users extends Migration {
 
 		Schema::create('product_group', function(Blueprint $table)
 		{
+			$table->integer('product_id')->unsigned();
+			$table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
 			$table->integer('sub_id')->unsigned();
 			$table->foreign('sub_id')->references('sub_id')->on('subgroup')->onDelete('cascade');
 			$table->integer('value')->default(0);
@@ -120,8 +124,8 @@ class Users extends Migration {
 		{
 			$table->integer('product_id')->unsigned();
 			$table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+			$table->integer('id')->unsigned();
+			$table->foreign('id')->references('id')->on('users')->onDelete('cascade');
 			$table->integer('rate')->defualt(0);
 			$table->text('remarks');
 			$table->timestamps();
@@ -131,8 +135,8 @@ class Users extends Migration {
 		{
 			$table->integer('shop_id')->unsigned();
 			$table->foreign('shop_id')->references('shop_id')->on('shop')->onDelete('cascade');
-			$table->integer('user_id')->unsigned();
-			$table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+			$table->integer('id')->unsigned();
+			$table->foreign('id')->references('id')->on('users')->onDelete('cascade');
 			$table->integer('rate')->defualt(0);
 			$table->text('remarks');
 			$table->timestamps();

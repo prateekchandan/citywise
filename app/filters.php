@@ -13,7 +13,9 @@
 
 App::before(function($request)
 {
-	//
+	$city=Session::get('city');
+	if($city==null || $city=="")
+		Session::put('city','Mumbai');
 });
 
 
