@@ -22,6 +22,7 @@ class Users extends Migration {
 		Schema::dropIfExists('department');
 		Schema::dropIfExists('shop');
 		Schema::dropIfExists('users');
+		Schema::dropIfExists('city');
 
 		Schema::create('users', function(Blueprint $table)
 		{
@@ -142,12 +143,13 @@ class Users extends Migration {
 			$table->timestamps();
 		});
 
-		/*DB::table('users')->insert(
-        array(
-            'email' => 'name@domain.com',
-            'verified' => true
-        )
-   		 );*/
+		Schema::create('city', function(Blueprint $table)
+		{
+			$table->string('name',100);
+			$table->timestamps();
+		});
+
+		
 	}
 
 	/**

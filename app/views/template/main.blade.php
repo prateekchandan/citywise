@@ -47,15 +47,20 @@
                             <a href="{{URL::to('/')}}" class="a-logo"><span>CITY </span> 'WISE'</a>
                         </div>
                         <div class="btn-group pull-right">
+                            
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                     {{Session::get('city')}}
                                 <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{URL::Route('city')}}/Mumbai">Mumbai</a></li>
-                                    <li><a href="{{URL::Route('city')}}/Delhi">Delhi</a></li>
-                                    <li><a href="{{URL::Route('city')}}/Kakinada">Kakinada</a></li>
+                                    <?php 
+                                        $city=new City;
+                                        $city=$city->get();
+                                    ?>
+                                    @foreach($city as $c)
+                                        <li><a href="{{URL::Route('city')}}/{{$c->name}}">{{$c->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                             

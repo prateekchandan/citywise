@@ -11,6 +11,7 @@ class HomeController extends BaseController {
 	public function populate()
 	{
 		if(sizeof(DB::table('department')->get())<1){	
+
 			$ins=array(
 					array('department'=>'Bags'),
 					array('department'=>'Watches'),
@@ -38,8 +39,16 @@ class HomeController extends BaseController {
 			}
 		}
 		echo "Populated Departments..<br>";
+		if(sizeof(DB::table('city')->get())<1){	
 
-
+			$cities=['Mumbai' , 'Delhi' , 'Vishakhapatnam','Kakinada'];
+			foreach ($cities as $key => $value) {
+				$city=new City;
+				$city->name=$value;
+				$city->save();
+			}
+		}
+		echo "Populated cities..<br>";
 
 
 

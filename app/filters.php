@@ -14,7 +14,8 @@
 App::before(function($request)
 {
 	$city=Session::get('city');
-	if($city==null || $city=="")
+	$city = City::where('name','=',$city)->first();
+	if($city==null)
 		Session::put('city','Mumbai');
 });
 
