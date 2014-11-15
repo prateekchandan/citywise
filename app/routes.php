@@ -15,6 +15,8 @@ Route::get('/', function()
 {	
 	return View::make('home');
 });
+Route::get('contact',array('as'=>'contact','uses'=>function(){return View::make('page.contact');}));
+
 
 Route::get('login',array('before' => 'guest','as'=>'user.login','uses'=>'UserController@showlogin'));
 Route::any('logout',array('as'=>'user.logout','uses'=>'UserController@logout'));

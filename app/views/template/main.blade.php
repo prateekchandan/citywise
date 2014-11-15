@@ -114,7 +114,7 @@
                                        
                                     </ul>
                                 </li> 
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="{{URL::Route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>About  City 'Wise'</h2>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">Company Information</a></li>
                                 <li><a href="#">Careers</a></li>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="col-sm-3 col-sm-offset-1">
                         <div class="single-widget">
-                            <h2>About Shopper</h2>
+                            <h2>About City 'Wise'</h2>
                             <form action="#" class="searchform">
                                 <input type="text" placeholder="Your email address" />
                                 <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
