@@ -57,4 +57,21 @@ class ProductController extends BaseController {
 
 	}
 
+
+	public function view($id=0)
+	{
+		$p=Product::where('product_id','=',$id)->first();
+		if(is_null($p))
+			return Redirect::to('/');
+
+		View::share('product',$p);
+		View::share('others',Product::where('shop_id','=',$p->shop_id)->get());
+
+		$review = DB::table('product_review')
+					->join('users','product_review.id','=','users.id')
+					->where('product_review.product_id','=',$id)
+					->get();
+		View::share('reviews',$review);
+		return View::make('product.one');
+	}
 }
