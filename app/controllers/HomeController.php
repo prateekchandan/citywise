@@ -5,7 +5,7 @@ class HomeController extends BaseController {
 	public function city($value='Mumbai')
 	{
 		Session::put('city',$value);
-		return Redirect::to('/');
+		return Redirect::back();
 	}
 
 	public function populate()

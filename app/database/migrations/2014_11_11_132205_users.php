@@ -50,6 +50,7 @@ class Users extends Migration {
 			$table->foreign('id')->references('id')->on('users')->onDelete('cascade');
 			$table->string('img',500)->nullable();
 			$table->text('address')->nullable();
+			$table->string('locality',150)->nullable();
 			$table->string('city', 100)->nullable();
 			$table->string('phone',100)->nullable();
 			$table->float('lat')->nullable();

@@ -72,6 +72,9 @@
                             <ul class="nav navbar-nav">
                                 @if(Auth::check())
                                 <li><a href="#">Welcome {{Auth::user()->name}}</a></li>
+                                @endif
+                                <li><a href="{{URL::Route('shop.add')}}"><i class="fa fa-plus"></i>Add your shop</a></li>
+                                @if(Auth::check())
                                 <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="{{URL::Route('user.logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
                                 @else
@@ -101,6 +104,7 @@
                                 <li><a href="index.html" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
+                                        <li><a href="{{URL::Route('shops')}}">View Shops in your City</a></li>
                                         <li><a href="shop.html">Products</a></li>
                                         <li><a href="product-details.html">Product Details</a></li> 
                                         <li><a href="checkout.html">Checkout</a></li> 
