@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12" id="tshirt">
 					<h2 class="title text-center">Browse Products in {{$shop->name}}</h2>
-					@foreach($products as $key => $shop)
+					@foreach($products as $key => $product)
 						@if($key%4==0)
 						<div class="row">
 						@endif
@@ -14,15 +14,15 @@
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												@if(file_exists(public_path().'/images/product/product_'.$shop->product_id.'.png'))
-												<img src="{{URL::asset('images/product/product_'.$shop->product_id.'.png')}}" style="max-width:100%;max-height:300px;" alt="">
+												@if(file_exists(public_path().'/images/product/product_'.$product->product_id.'.png'))
+												<img src="{{URL::asset('images/product/product_'.$product->product_id.'.png')}}" style="max-width:100%;max-height:300px;" alt="">
 												@else
-												<img src="{{URL::asset('images/shop/default.jpg')}}" alt="">
+												<img src="{{URL::asset('images/product/default.jpg')}}" alt="">
 												@endif
-												<h2>{{$shop->name}}</h2>
-												<p>{{$shop->locality}}</p>
+												<h2>{{$product->name}}</h2>
+												<p>{{$product->category}}</p>
 
-												<a href="{{URL::Route('shop')}}/{{$shop->shop_id}}" class="btn btn-default add-to-cart"><i class="fa fa-angle-double-right"></i>View Details</a>
+												<a href="{{URL::Route('product')}}/{{$product->product_id}}" class="btn btn-default add-to-cart"><i class="fa fa-angle-double-right"></i>View Details</a>
 											</div>
 											
 										</div>
