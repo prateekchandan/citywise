@@ -38,5 +38,6 @@ Route::get('shop/{id}',array('as'=>'shop_one','uses'=>'ShopController@one_shop')
 
 
 Route::get('shop/{id}/products',array('as'=>'product.shop','uses'=>'ProductController@by_shop'));
+Route::get('departments',array('as'=>'departments','uses'=>'ProductController@dept'));
 
 
