@@ -35,6 +35,11 @@
 					@if(sizeof($shops)%4!=0)
 					</div>
 					@endif
+
+					@if(sizeof($shops)==0)
+						<blockquote>Oops! No Shops in your city<br>
+						If you are a shop owner , please login and register your shop</blockquote>
+					@endif
 				</div>
 			</div>
 		</div>
