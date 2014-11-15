@@ -9,6 +9,12 @@
 						<h2 class="title text-center">{{$shop->name}}</h2>
 						<div class="single-blog-post">
 							<h3>Owner : <a href="user">{{$user->name}}</a></h3>
+							@if(Auth::check())
+							@if($user->id==Auth::user()->id)
+							<a class="btn btn-default btn-success" href="{{URL::Route('shop')}}/{{$shop->shop_id}}/product/add"><i class="fa fa-plus"></i> Add new product</a>
+							@endif
+							@endif
+							<a class="btn btn-default btn-info" href="{{URL::Route('shop')}}/{{$shop->shop_id}}/products"><i class="fa fa-search"></i>View all products</a>
 							<div class="post-meta">
 								
 								<span>

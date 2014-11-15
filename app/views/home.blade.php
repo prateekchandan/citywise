@@ -30,7 +30,7 @@
 									<h1><span>CITY</span> 'WISE'</h1>
 									<h2>Get the power of shopping with you</h2>
 									<p>You can now look at your required products in your city by browsing through various departments</p>
-									<a href="{{URL::Route('departments')}}" class="btn btn-default get">Browse shops in your city</a>
+									<a href="{{URL::Route('departments')}}" class="btn btn-default get">Browse multiple departments</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />

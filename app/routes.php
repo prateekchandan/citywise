@@ -38,6 +38,8 @@ Route::get('shop/{id}',array('as'=>'shop_one','uses'=>'ShopController@one_shop')
 
 
 Route::get('shop/{id}/products',array('as'=>'product.shop','uses'=>'ProductController@by_shop'));
+Route::get('shop/{id}/product/add',array('before' => 'user','as'=>'product.add','uses'=>'ProductController@view_add'));
+Route::post('shop/{id}/product/add',array('before' => 'user','as'=>'product.add','uses'=>'ProductController@add'));
 Route::get('departments',array('as'=>'departments','uses'=>'ProductController@dept'));
 
 
