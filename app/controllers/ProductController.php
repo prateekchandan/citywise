@@ -9,7 +9,12 @@ class ProductController extends BaseController {
 			return Redirect::route('shops');
 
 		$products = new Product;
-		
+
+	}
+
+	public function dept($value='')
+	{
+		echo "coming soon...";
 	}
 
 }
