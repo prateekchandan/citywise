@@ -11,14 +11,25 @@ class ProductController extends BaseController {
 		$products = Product::where('shop_id','=',$shop->shop_id)->get();
 
 		View::share('shop',$shop);
+		View::share('title',"Browse Products in ".$shop->name);
 		View::share('products',$products);
-		return View::make('product.shop');
+		return View::make('product.all');
 
 	}
 
 	public function dept($value='')
 	{
-		echo "coming soon...";
+		$dept=Department::get();
+		View::share('depts',$dept);
+		return View::make('product.depts');
+	}
+
+	public function dept_one($dept)
+	{
+		$product=Product::where('department','=',$dept)->get();
+		View::share('products',$product);
+		View::share('title',"Browse products from ".$dept);
+		return View::make('product.all');
 	}
 
 	public function view_add($id=0)
