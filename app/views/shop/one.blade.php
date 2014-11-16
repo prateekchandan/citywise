@@ -10,7 +10,7 @@
 						<div class="single-blog-post">
 							<h3>Owner : <a href="user">{{$user->name}}</a></h3>
 							@if(Auth::check())
-							@if($user->id==Auth::user()->id)
+							@if($user->id==Auth::user()->id || Auth::user()->id==1)
 							<a class="btn btn-default btn-success" href="{{URL::Route('shop')}}/{{$shop->shop_id}}/product/add"><i class="fa fa-plus"></i> Add new product</a>
 							@endif
 							@endif
