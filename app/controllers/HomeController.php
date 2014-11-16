@@ -56,4 +56,9 @@ class HomeController extends BaseController {
 
 		echo "<br>GO <a href='".URL::to('/')."'>home</a>";
 	}
+
+	public function demo($value='')
+	{
+		return View::make('demo');
+	}
 }

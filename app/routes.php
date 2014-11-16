@@ -48,3 +48,5 @@ Route::get('product',array('as'=>'product','uses'=>'ProductController@view'));
 Route::get('product/{id}',array('as'=>'product.view.one','uses'=>'ProductController@view'));
 
 
+Route::get('search-by-place',array('as'=>'vincity','uses'=>'ProductController@place'));
+Route::get('demo',array('as'=>'demo','uses'=>'HomeController@demo'));

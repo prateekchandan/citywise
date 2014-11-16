@@ -40,9 +40,9 @@
 							<div class="item">
 								<div class="col-sm-6">
 									<h1><span>CITY</span> 'WISE'</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>Get the best near you</h2>
+									<p>Search For the products closest from you. Enter your locality and we will tell your best products near you</p>
+									<a href="{{URL::Route('vincity')}}" class="btn btn-default get">Browse by place</a>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />

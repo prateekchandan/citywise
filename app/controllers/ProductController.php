@@ -85,4 +85,9 @@ class ProductController extends BaseController {
 		View::share('reviews',$review);
 		return View::make('product.one');
 	}
+
+	public function place($value='')
+	{
+		return View::make('product.vinc');
+	}
 }
