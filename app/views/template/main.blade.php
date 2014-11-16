@@ -105,15 +105,19 @@
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{{URL::Route('shops')}}">View Shops in your City</a></li>
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li> 
+                                        <li><a href="{{URL::Route('demo')}}">Products</a></li>
+                                        <li><a href="{{URL::Route('demo')}}">Product Details</a></li> 
                                     </ul>
                                 </li> 
                                  <li class="dropdown"><a href="{{URL::route('departments')}}">Departments<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                       
+                                       @foreach(Department::get() as $dept)
+                                        <li><a href="{{URL::Route('departments')}}/{{$dept->department}}">{{$dept->department}}</a></li>
+                                       @endforeach
                                     </ul>
                                 </li> 
+                                <li><a href="{{URL::Route('demo')}}">New Arrivals<span style="color:red"><sup>new</sup></span></a></li>
+                                <li><a href="{{URL::Route('demo')}}">Stock Lastings<span style="color:red"><sup>new</sup></span></a></li>
                                 <li><a href="{{URL::Route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
