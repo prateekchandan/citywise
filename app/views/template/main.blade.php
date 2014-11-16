@@ -105,6 +105,7 @@
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{{URL::Route('shops')}}">View Shops in your City</a></li>
+                                        <li><a href="{{URL::Route('vincity')}}">View Shops Closest to you</a></li>
                                         <li><a href="{{URL::Route('demo')}}">Products</a></li>
                                         <li><a href="{{URL::Route('demo')}}">Product Details</a></li> 
                                     </ul>
