@@ -8,7 +8,7 @@
 					<div class="blog-post-area">
 						<h2 class="title text-center">{{$product->name}}</h2>
 						<div class="single-blog-post">
-							<h3>Category : <a href="#">{{$product->category}}</a></h3>
+							<h3>Category : <a href="{{URL::Route('departments')}}/{{$product->department}}">{{$product->department}}</a></h3>
 							
 							<div class="post-meta">
 								
@@ -35,9 +35,9 @@
 							<p>
 								{{$product->warranty_details}}
 							</p>
-							<h3>Warranty Details</h3>
+							<h3>Exchange Policy</h3>
 							<p>
-								{{$product->warranty_details}}
+								{{$product->exchange_policy}}
 							</p>
 						</div>
 					</div><!--/blog-post-area-->
@@ -45,19 +45,23 @@
 					
 					
 					<div class="media commnets">
-						<h3>Reviews</h3>
+						<h3> &nbsp;Reviews</h3>
 						@foreach($reviews as $review)
 						<div class="col-md-12"><hr>
 						<div class="media-body">
 							<h4 class="media-heading">{{$review->name}}</h4>
 							<p>{{$review->remarks}}</p>
+							<b>Rated : {{$review->rate}}</b>
 						</div>
 						</div>
 						@endforeach
+						@if(Auth::check())
+
 						<div class="col-md-12">
+						<hr>
 							<div class="media-body">
-							<form method="post" action="{{URL::Route('shop.review')}}">
-								<input type="hidden" name="shop_id" value="{{$product->product_id}}">
+							<form method="post" action="{{URL::Route('product.review')}}">
+								<input type="hidden" name="product_id" value="{{$product->product_id}}">
 								<div class="form-group">
 									<label>Leave your reviews</label>
 									<textarea name="remarks" required></textarea>
@@ -74,8 +78,7 @@
 							</form>
 							</div>
 						</div>
-						@if(Auth::check())
-						
+					
 						@else
 							<blockquote><a href="{{URL::Route('user.login')}}">Login</a> to add review</blockquote>
 						@endif

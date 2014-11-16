@@ -46,6 +46,7 @@ Route::get('departments',array('as'=>'departments','uses'=>'ProductController@de
 Route::get('departments/{dept}',array('as'=>'departments.one','uses'=>'ProductController@dept_one'));
 Route::get('product',array('as'=>'product','uses'=>'ProductController@view'));
 Route::get('product/{id}',array('as'=>'product.view.one','uses'=>'ProductController@view'));
+Route::post('product-review',array('before' => 'user','as'=>'product.review','uses'=>'ProductController@add_review'));
 
 
 Route::get('search-by-place',array('as'=>'vincity','uses'=>'ProductController@place'));

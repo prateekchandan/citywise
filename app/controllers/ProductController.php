@@ -90,4 +90,16 @@ class ProductController extends BaseController {
 	{
 		return View::make('product.vinc');
 	}
+
+	public function add_review($value='')
+	{
+		$review=new ProductReview;
+
+		$review->product_id=Input::get('product_id');
+		$review->remarks=Input::get('remarks');
+		$review->rate=Input::get('rate');
+		$review->id=Auth::User()->id;
+		$review->save();
+		return Redirect::back();
+	}
 }
