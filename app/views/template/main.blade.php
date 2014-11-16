@@ -71,11 +71,11 @@
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
                                 @if(Auth::check())
-                                <li><a href="#">Welcome {{Auth::user()->name}}</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Welcome {{Auth::user()->name}}</a></li>
                                 @endif
                                 <li><a href="{{URL::Route('shop.add')}}"><i class="fa fa-plus"></i>Add your shop</a></li>
                                 @if(Auth::check())
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                <li><a href="{{URL::Route('demo')}}"><i class="fa fa-user"></i> Account</a></li>
                                 <li><a href="{{URL::Route('user.logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
                                 @else
                                 <li><a href="{{URL::Route('user.login')}}"><i class="fa fa-lock"></i> Login</a></li>
@@ -102,7 +102,7 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a href="{{URL::to('/')}}" class="active">Home</a></li>
-                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="{{URL::Route('demo')}}">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{{URL::Route('shops')}}">View Shops in your City</a></li>
                                         <li><a href="{{URL::Route('vincity')}}">View Shops Closest to you</a></li>
@@ -146,11 +146,11 @@
                         <div class="single-widget">
                             <h2>Service</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Online Help</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Order Status</a></li>
-                                <li><a href="#">Change Location</a></li>
-                                <li><a href="#">FAQ’s</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Online Help</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Contact Us</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Order Status</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Change Location</a></li>
+                                <li><a href="{{URL::Route('demo')}}">FAQ’s</a></li>
                             </ul>
                         </div>
                     </div>
@@ -158,11 +158,11 @@
                         <div class="single-widget">
                             <h2>Quock Shop</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">T-Shirt</a></li>
-                                <li><a href="#">Mens</a></li>
-                                <li><a href="#">Womens</a></li>
-                                <li><a href="#">Gift Cards</a></li>
-                                <li><a href="#">Shoes</a></li>
+                                <li><a href="{{URL::Route('demo')}}">T-Shirt</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Mens</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Womens</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Gift Cards</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Shoes</a></li>
                             </ul>
                         </div>
                     </div>
@@ -170,11 +170,11 @@
                         <div class="single-widget">
                             <h2>Policies</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privecy Policy</a></li>
-                                <li><a href="#">Refund Policy</a></li>
-                                <li><a href="#">Billing System</a></li>
-                                <li><a href="#">Ticket System</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Terms of Use</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Privecy Policy</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Refund Policy</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Billing System</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Ticket System</a></li>
                             </ul>
                         </div>
                     </div>
@@ -182,11 +182,11 @@
                         <div class="single-widget">
                             <h2>About  City 'Wise'</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Company Information</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Store Location</a></li>
-                                <li><a href="#">Affillate Program</a></li>
-                                <li><a href="#">Copyright</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Company Information</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Careers</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Store Location</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Affillate Program</a></li>
+                                <li><a href="{{URL::Route('demo')}}">Copyright</a></li>
                             </ul>
                         </div>
                     </div>
